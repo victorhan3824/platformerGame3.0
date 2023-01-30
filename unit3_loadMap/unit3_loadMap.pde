@@ -23,7 +23,7 @@ color yellow= #fff200;
 color pink  = #ffa3b1;
 color Lbrown= #e5aa7a;
 color green = #22b14c;
-color aqua  = #99d9ea;
+color rice  = #f5e49c;
 
 //Images used in game;
 PImage ice, brick, spike, trampoline, bridge, crate, heal, treasure;
@@ -177,7 +177,7 @@ void loadWorld(PImage map) {
       FBox b = new FBox(gridSize, gridSize); //intialize FBox
       b.setPosition(x*gridSize, y*gridSize); //set position of FBox
       b.setStatic(true);
-      b.setFriction(0.3);
+      b.setFriction(0.5);
       b.setRestitution(0.1);
       
       //retrieve color
@@ -189,11 +189,11 @@ void loadWorld(PImage map) {
       //add in the Fboxes based on color at the pixel
       if (c == black) { //ground
         addFbox(b, brick, "brick");
-        b.setFriction(1);
+        b.setFriction(4);
       }
       if (c == Dblue) { //wall; defined for the enemies' classes
         addFbox(b, brick, "wall");
-        b.setFriction(1);
+        b.setFriction(4);
       }
       if (c == Lblue) { //ice
         addFbox(b, ice, "ice");
@@ -241,7 +241,7 @@ void loadWorld(PImage map) {
         world.add(md);
         terrain.add(md);
       }
-      if (c == aqua) {
+      if (c == rice) {
         addFbox(b, treasure, "treasure");
         b.setStatic(true);
         b.setSensor(true);

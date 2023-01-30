@@ -7,7 +7,7 @@ class FPlayer extends FGameObject{
   FPlayer() {
     //initalize location + display
     super();
-    setPosition(200,0); //inital position
+    setPosition(0,50); //inital position
     setFillColor(red);
     setRotatable(false);
     setName("player");
@@ -19,7 +19,7 @@ class FPlayer extends FGameObject{
     //stat initalize
     lives = 5;
     shieldCounter = 0;
-    shield = false;
+    shield = true;
   }
   
   void act() {

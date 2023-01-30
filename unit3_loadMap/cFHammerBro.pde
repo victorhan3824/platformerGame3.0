@@ -32,7 +32,8 @@ class FHammerBro extends FGoomba{
       b.setVelocity(0,-500);
       b.setAngularVelocity(20);
       b.attachImage(hammer);
-      world.add(b);  
+      world.add(b); 
+      if (b.getY() > 2000) world.remove(b);
     }
   }
   

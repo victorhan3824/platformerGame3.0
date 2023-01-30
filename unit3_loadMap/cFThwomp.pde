@@ -17,7 +17,7 @@ class FThwomp extends FGameObject {
   
   void fall() {
     float dist = getX()+gridSize - player.getX();
-    if (abs(dist) < 1.2*gridSize) {
+    if (abs(dist) < 1.2*gridSize && player.getY() > getY()) {
         setStatic(false);
         attachImage(thwomp[1]);
     }
